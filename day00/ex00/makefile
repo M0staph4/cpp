@@ -1,27 +1,27 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/18 01:37:25 by mmoutawa          #+#    #+#              #
+#    Updated: 2022/10/18 22:26:17 by mmoutawa         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = megaphone
 CC = c++ 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror 
 SRC = megaphone.cpp
-
-# This is a minimal set of ANSI/VT100 color codes
-_END=$'\x1b[0m'
-_BOLD=$'\x1b[1m'
-
-# Colors
-_RED=$'\x1b[31m'
-_GREEN=$'\x1b[32m'
-_CYAN=$'\x1b[36m'
-
 
 all : $(NAME)
 $(NAME): $(SRC)
-	@echo "${_BOLD}${_GREEN}---------Minishell Compilation---------${_END}"
 	$(CC) $(CFLAGS) $(SRC)  -o $(NAME)
+
 clean:
-	@echo "${_BOLD}${_RED}---------Cleaning Objects---------${_END}"
-	rm -rf $(OBJ)
-fclean: clean
-	@echo "${_BOLD}${_RED}---------Deleting---------${_END}"
 	rm -rf $(NAME)
+
+fclean: clean
 
 re: fclean all
