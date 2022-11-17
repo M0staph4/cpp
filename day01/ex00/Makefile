@@ -1,7 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/15 20:51:11 by mmoutawa          #+#    #+#              #
+#    Updated: 2022/11/15 20:51:12 by mmoutawa         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = Zombie
 CC = c++ 
-CFLAGS = -Wall -Wextra -Werror 
-SRC = main.cpp seter_geter.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
 	
 
 all : $(NAME)

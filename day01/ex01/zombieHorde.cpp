@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/15 20:51:42 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/11/15 20:51:43 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 Zombie* zombieHorde( int N, std::string name )
@@ -9,7 +21,7 @@ Zombie* zombieHorde( int N, std::string name )
         if(!zombie)
             return(NULL);
         while(++i < N)
-            zombie[i].set_name(name);
+            zombie[i].setName(name);
         return zombie;
     }
     return(NULL);

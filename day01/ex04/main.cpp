@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/15 20:52:06 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/11/15 20:52:07 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <fstream>
 
@@ -6,7 +18,7 @@ int main (int ac, char **av)
     if(ac == 4)
     {
         std::fstream read;
-        std::fstream write;0
+        std::fstream write;
         std::string file = av[1];
         std::string s1 = av[2];
         std::string s2 = av[3];
@@ -19,7 +31,8 @@ int main (int ac, char **av)
         read.open(file, std::ios::in);
         if(!read)
             std::cout << "file not found";
-        write.open(newfile, std::ios::out);
+        else
+            write.open(newfile, std::ios::out);
         while(std::getline(read, line))
         {
             i = line.find(s1);

@@ -1,8 +1,7 @@
-NAME = Humans
+NAME = Fixed
 CC = c++ 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp HumanB.cpp HumanA.cpp Weapon.cpp
-	
+SRC = main.cpp Fixed.cpp
 
 all : $(NAME)
 $(NAME): $(SRC)
