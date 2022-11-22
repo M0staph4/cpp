@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:51:37 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/11/15 20:51:38 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:42:45 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ void Zombie::setName(std::string name)
 }
 
 Zombie::Zombie(){}
+
 Zombie::Zombie(std::string name){
     this->name = name;
 }
+
 Zombie::~Zombie()
 {
     std::cout<<"Zombie "<< name <<" deleted"<<std::endl;

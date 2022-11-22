@@ -5,7 +5,7 @@
 
 class Fixed{
     private:
-        int value;
+        float value;
         static const int bits_value = 8;
     public:
         Fixed();
@@ -19,4 +19,4 @@ class Fixed{
         int getRawBits(void) const;
         void setRawBits( int const raw );
 };
-std::ostream & operator<<(std::ostream const & ob ,Fixed const& F);
+std::ostream & operator<<(std::ostream &ob ,Fixed const& F);

@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:51:59 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/11/16 18:33:33 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:51:48 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanB {
         std::string name;
     public :
         void attack();
-        HumanB(std::string name, Weapon *weapon);
+        HumanB(std::string name);
         void setWeapon(Weapon & weapon);
 };
 
