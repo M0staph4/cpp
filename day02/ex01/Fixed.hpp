@@ -1,4 +1,17 @@
-#pragma once
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/28 12:31:17 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/11/28 12:36:47 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
@@ -20,3 +33,5 @@ class Fixed{
         void setRawBits( int const raw );
 };
 std::ostream & operator<<(std::ostream &ob ,Fixed const& F);
+
+#endif

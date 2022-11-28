@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/28 12:31:14 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/11/28 21:05:25 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(const int conv_value)
@@ -9,17 +21,17 @@ Fixed::Fixed(const int conv_value)
 Fixed::Fixed(const float conv_value)
 {
     std::cout <<"Float constructor called"<< std::endl;
-    value = roundf(conv_value * 256);
+    value = roundf(conv_value * (1 << bits_value));
 }
 
 float Fixed::toFloat( void ) const
 {
-    return (value / 256);
+    return (value / (1 << bits_value));
 }
 
 int Fixed::toInt( void ) const
 {
-    return (value / 256);
+    return (value / (1 << bits_value));
 }
 
 Fixed::Fixed()
@@ -56,6 +68,7 @@ void Fixed::setRawBits(int const raw)
 {
     value = raw;
 }
+
 std::ostream & operator<<(std::ostream &ob ,Fixed const& F)
 {
     ob << F.toFloat();

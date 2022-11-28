@@ -1,4 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/28 14:15:57 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/11/28 21:10:13 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
+
+Fixed::~Fixed(){}
+
+Fixed::Fixed()  {value = 0;}
 
 Fixed::Fixed(const int conv_value)
 {
@@ -7,22 +23,17 @@ Fixed::Fixed(const int conv_value)
 
 Fixed::Fixed(const float conv_value)
 {
-    value = roundf(conv_value * 256);
+    value = roundf(conv_value * (1 << bits_value));
 }
 
 float Fixed::toFloat( void ) const
 {
-    return (value / 256);
+    return (value / (1 << bits_value));
 }
 
 int Fixed::toInt( void ) const
 {
-    return (value / 256);
-}
-
-Fixed::Fixed()
-{
-    value = 0;
+    return (value / (1 << bits_value));
 }
 
 Fixed::Fixed(Fixed const& F)
@@ -36,10 +47,6 @@ Fixed & Fixed::operator=(Fixed const& F)
     return *this;
 }
 
-Fixed::~Fixed()
-{
-}
-
 int Fixed::getRawBits(void) const
 {
     return (value);
@@ -50,28 +57,36 @@ void Fixed::setRawBits(int const raw)
     value = raw;
 }
 
-Fixed & Fixed::operator+(Fixed const& F)
+Fixed Fixed::operator+(Fixed const& F) const
 {
-    this->value = this->value + F.value;
-    return *this;
+    Fixed tmp;
+
+    tmp.value = this->value + F.value;
+    return tmp;
 }
 
-Fixed & Fixed::operator-(Fixed const& F)
+Fixed Fixed::operator-(Fixed const& F) const
 {
-    this->value = this->value - F.value;
-    return *this;
+    Fixed tmp;
+
+    tmp.value = this->value - F.value;
+    return tmp;
 }
 
-Fixed & Fixed::operator*(Fixed const& F)
+Fixed Fixed::operator*(Fixed const& F) const
 {
-    this->value = (this->value * F.value) / 256;
-    return *this;
+    Fixed tmp;
+
+    tmp.value = (this->value * F.value) / (1 << bits_value);
+    return tmp;
 }
 
-Fixed & Fixed::operator/(Fixed const& F)
+Fixed Fixed::operator/(Fixed const& F) const
 {
-    this->value = (this->value / F.value) / 256;
-    return *this;
+    Fixed tmp;
+
+    tmp.value = this->value / (F.value / (1 << bits_value));
+    return tmp;
 }
 
 Fixed & Fixed::operator--(void)
@@ -177,6 +192,7 @@ Fixed& Fixed::max(Fixed &F, Fixed &F2)
     else
         return(F);
 }
+
 Fixed const & Fixed::max(Fixed const &F, Fixed const &F2)
 {
     if(F.value < F2.value)
@@ -184,5 +200,3 @@ Fixed const & Fixed::max(Fixed const &F, Fixed const &F2)
     else
         return(F);
 }
-
-
