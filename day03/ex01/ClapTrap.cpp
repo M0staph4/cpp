@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:15:17 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/11/30 14:55:38 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/11/30 23:47:33 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::~ClapTrap()
 {
-    std::cout<<"destructor is called"<<std::endl;
+    std::cout<<"ClapTrap destructor is called"<<std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -29,6 +29,7 @@ ClapTrap::ClapTrap(std::string name)
     Hit_Points = 100;
     Energy_Points = 50;
     Attack_Damage = 20;
+    std::cout<<"ClapTrap Parameterized Constructor called"<<std::endl;
     this->name = name;
 }
 
@@ -76,4 +77,8 @@ void ClapTrap::beRepaired(unsigned int amount)
         Hit_Points = Hit_Points + amount;
         Energy_Points -= 1;
     }
+}
+int ClapTrap::get_hit_points() const
+{
+    return(Hit_Points);
 }
