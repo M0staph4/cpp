@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:15:15 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/11/29 21:17:38 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:59:41 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 
 class ClapTrap{
-    private:
+    protected:
         std::string name;
         int Hit_Points;
         int Energy_Points;

@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:15:17 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/11/29 23:20:16 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:55:38 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 ClapTrap::ClapTrap()
 {
-    Hit_Points = 10;
-    Energy_Points = 10;
-    Attack_Damage = 0;
+    Hit_Points = 100;
+    Energy_Points = 50;
+    Attack_Damage = 20;
 }
 
 ClapTrap::~ClapTrap()
@@ -26,9 +26,9 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-    Hit_Points = 10;
-    Energy_Points = 10;
-    Attack_Damage = 0;
+    Hit_Points = 100;
+    Energy_Points = 50;
+    Attack_Damage = 20;
     this->name = name;
 }
 
