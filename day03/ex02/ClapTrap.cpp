@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:15:17 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/01 00:10:46 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:05:21 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 ClapTrap::ClapTrap()
 {
     Hit_Points = 100;
-    Energy_Points = 100;
-    Attack_Damage = 30;
+    Energy_Points = 50;
+    Attack_Damage = 20;
+    std::cout<<"ClapTrap Constructor is called"<<std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -27,14 +28,15 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 {
     Hit_Points = 100;
-    Energy_Points = 100;
-    Attack_Damage = 30;
-    std::cout<<"ClapTrap Parameterized Constructor called"<<std::endl;
+    Energy_Points = 50;
+    Attack_Damage = 20;
     this->name = name;
+    std::cout<<"ClapTrap Parameterized Constructor called"<<std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &cp)
 {
+    std::cout<<"ClapTrap Copy Constructor is called"<<std::endl;
     *this = cp;
 }
 
@@ -45,6 +47,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &cp)
     this->Hit_Points = cp.Hit_Points;
     this->Energy_Points = cp.Energy_Points;
     this->Attack_Damage = cp.Attack_Damage;
+    std::cout<<"ClapTrap Assignment is called"<<std::endl;
     return(*this);
 }
 
@@ -74,11 +77,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout<<"there's no hit points"<<std::endl;
     else
     {
-        Hit_Points = Hit_Points + amount;
+        Hit_Points += amount;
         Energy_Points -= 1;
     }
-}
-int ClapTrap::get_hit_points() const
-{
-    return(Hit_Points);
 }

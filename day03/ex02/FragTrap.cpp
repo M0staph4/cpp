@@ -3,6 +3,9 @@
 
 FragTrap::FragTrap()
 {
+    Hit_Points = 100;
+    Energy_Points = 100;
+    Attack_Damage = 30;
     std::cout <<"FragTrap constructor called"<< std::endl;
 }
 
@@ -13,12 +16,16 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(std::string name) 
 {
+    Hit_Points = 100;
+    Energy_Points = 100;
+    Attack_Damage = 30;
     std::cout <<"FragTrap Parameterized Constructor called"<< std::endl;
     this->name = name;
 }
 
 FragTrap::FragTrap(FragTrap const& St)
 {
+    std::cout<<"Fragtrap Copy Constructor is called"<<std::endl;
     *this = St;
 }
 
@@ -28,21 +35,11 @@ FragTrap& FragTrap::operator=(FragTrap const& St)
     this->Hit_Points = St.Hit_Points;
     this->Energy_Points = St.Energy_Points;
     this->Attack_Damage = St.Attack_Damage;
+    std::cout<<"FragTrap Assignment Operator is called"<<std::endl;
     return *this; 
 }
 
 void FragTrap::highFivesGuys()
 {
-    std::cout<<"FragTrap is now in Gate keeper mode"<<std::endl;
-}
-
-void FragTrap::attack(const std::string &target)
-{
-    if(!Energy_Points || !Hit_Points)
-    std::cout<<"there's no hit points"<<std::endl;
-    else
-    {
-        std::cout<<"FragTrap "<<name<<" attacks "<<target<<", causing "<< Attack_Damage <<" points of damage!"<<std::endl;
-        Energy_Points -= 1;
-    }
+    std::cout<<"a positive high fives request "<<std::endl;
 }

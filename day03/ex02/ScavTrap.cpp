@@ -20,6 +20,7 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap(ScavTrap const& St)
 {
     *this = St;
+    std::cout<<"ScavTrap Copy Constructor is called"<<std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(ScavTrap const& St)
@@ -28,6 +29,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& St)
     this->Hit_Points = St.Hit_Points;
     this->Energy_Points = St.Energy_Points;
     this->Attack_Damage = St.Attack_Damage;
+    std::cout<<"ScavTrap Assignment Operator is called"<<std::endl;
     return *this; 
 }
 
@@ -39,7 +41,7 @@ void ScavTrap::guardGate()
 void ScavTrap::attack(const std::string &target)
 {
     if(!Energy_Points || !Hit_Points)
-    std::cout<<"there's no hit points"<<std::endl;
+        std::cout<<"there's no hit points"<<std::endl;
     else
     {
         std::cout<<"ScavTrap "<<name<<" attacks "<<target<<", causing "<< Attack_Damage <<" points of damage!"<<std::endl;

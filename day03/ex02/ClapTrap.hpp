@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:15:15 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/11/30 23:46:47 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/02 19:46:08 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ class ClapTrap{
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-        int get_hit_points() const;
 };
