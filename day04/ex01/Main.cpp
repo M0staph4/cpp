@@ -21,6 +21,5 @@ int main()
         animal[i]->makeSound();
     while(--i >= 0)
         delete animal[i];
-    
     return 0;
 }
