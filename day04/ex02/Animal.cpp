@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 16:29:36 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/08 17:35:36 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:36:18 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,4 @@ void Animal::makeSound() const
 {
     std::cout << "i'm animal" << std::endl;
 }
+

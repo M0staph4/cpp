@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 18:39:18 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/08 16:08:54 by mmoutawa         ###   ########.fr       */
+/*   Created: 2022/12/05 20:27:36 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/12/05 20:45:19 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Brain.hpp"
 
-#include "Animal.hpp"
+Brain::Brain()
+{
+    std::cout << "Brain constructor called"<< std::endl;
+}
 
-class Cat : public Animal{
-    public:
-        Cat();
-        Cat(std::string &type);
-        Cat(const Cat& CP);
-        Cat &operator=(const Cat& OB);
-        ~Cat();
-        virtual void makeSound() const;
-};
 
-#endif
+Brain::Brain(const Brain& CP)
+{
+    *this = CP;
+}
+
+Brain &Brain::operator=(const Brain &OB)
+{
+    int i = -1;
+    while(++i < 100)
+        this->ideas[i] = OB.ideas[i];
+    return *this;
+}
+
+Brain::~Brain()
+{
+    std::cout <<"" <<std::endl;
+}
