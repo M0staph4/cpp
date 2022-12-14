@@ -21,6 +21,12 @@ int main()
 
     while(++i < 6)
         animal[i]->makeSound();
+    
+    // i = -1;
+    // Cat *cat = new Cat;
+    // while(++i < 100)
+    //     std::cout << cat->getBrain()<< std::endl;
+    
     while(--i >= 0)
         delete animal[i];
     

@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 19:40:37 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/04 19:43:46 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:48:05 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongAnimal::WrongAnimal()
 {
-    std::cout << "WrongAnimal constructor called"<< std::endl;
+    std::cout << "WrongAnimal default constructor called"<< std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string &type)

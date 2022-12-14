@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 19:07:08 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/04 19:19:40 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:48:26 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Dog::Dog()
 {
+    std::cout << "Dog default constructor called"<< std::endl;
     type = "Dog";
-    std::cout << "Dog constructor called"<< std::endl;
 }
 
 Dog::Dog(std::string &type)
@@ -44,5 +44,5 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-    std::cout << "Woof Woof"<< std::endl;
+    std::cout << "Woof Woof" << std::endl;
 }

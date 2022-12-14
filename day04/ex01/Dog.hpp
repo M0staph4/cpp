@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:38:34 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/05 15:37:43 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:27:11 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ class Dog : public Animal{
         Dog(const Dog& CP);
         Dog &operator=(const Dog& OB);
         ~Dog();
-        virtual void makeSound() const;
+        void makeSound() const;
         std::string getType() const;
+        std::string getBrain(int i) const;
 };
 
 #endif

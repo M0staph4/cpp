@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:39:18 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/08 16:08:54 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/11 20:19:03 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat : public Animal{
         Cat(const Cat& CP);
         Cat &operator=(const Cat& OB);
         ~Cat();
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
 #endif
