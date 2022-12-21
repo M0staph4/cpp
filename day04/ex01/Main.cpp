@@ -26,9 +26,10 @@ int main()
     // Cat *cat = new Cat;
     // while(++i < 100)
     //     std::cout << cat->getBrain(i)<< std::endl;
-    // i = 6;
 
-    while(--i >= 0)
+    i = -1;
+
+    while(++i >= 0)
         delete animal[i];
     
     return 0;

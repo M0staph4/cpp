@@ -8,6 +8,9 @@ int main()
 {
     int i = -1;
     Animal *animal[6];
+
+    // Animal _animal;
+    // Animal *_animal = new Animal;
     
     while(++i < 6)
     {
