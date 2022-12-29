@@ -29,8 +29,6 @@ const char* Form::GradeTooLowException::what() const throw()
     return ("Grade too low");
 }
 
-
-
 const char* Form::GradeTooHighException::what() const throw()
 {
     return ("Grade too high");
@@ -49,7 +47,7 @@ Form::~Form()
     std::cout <<"Form destructor called" << std::endl;
 }
 
-void Form::beSigned(Bureaucrat &BR)
+void Form::beSigned(Bureaucrat BR)
 {
     if(BR.getGrade() > 150)
         throw GradeTooLowException();

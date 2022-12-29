@@ -1,11 +1,21 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm():
+Form("Shrubbery", 145, 137)
 {
     std::cout<<"ShrubberyCreationForm default constructor called"<<std::endl;
+    this->target = "luchaa";
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+:Form("Shrubbery", 145, 137)
+{
+    std::cout<<"ShrubberyCreationForm Parameterized constructor called"<<std::endl;
+    this->target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &CP)
+:Form("Shrubbery", 145, 137)
 {
     std::cout <<"ShrubberyCreationForm copy constructor called"<<std::endl;
     *this = CP;
@@ -18,11 +28,16 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return(*this);
 }
 
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+    std::cout<<"ShrubberyCreationForm destructor called"<<std::endl; 
+}
+
+
 void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
     std::fstream file;
-
-    if(this->getSignGrade() == 145 && this->getExecuteGrade() == 137)
+    if(this->isSigned() && this->getExecuteGrade() >= executor.getGrade())
     {
         file.open(target + "_shrubbery", std::ios::out);
         file << "           \\/ |    |/\n";
@@ -35,6 +50,17 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
         file << "             }{{\n";
         file << "       , -=-~{ .-^- _\n";
         file << "             `}" << std::endl;
+        file.close();
     }
-
+    else
+        GradeTooLowException();
 }
+
+std::string ShrubberyCreationForm::getTarget() const {return target;}
+
+std::ostream &operator<<(std::ostream &OS, ShrubberyCreationForm &OB)
+{
+    OS << OB.getTarget();
+    return OS;
+}
+// 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

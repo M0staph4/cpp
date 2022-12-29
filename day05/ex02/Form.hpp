@@ -6,7 +6,6 @@
 #include <fstream>
 
 class Bureaucrat;
-
 class Form {
     private:
         const std::string name;
@@ -18,12 +17,13 @@ class Form {
         Form(const std::string name, const int sign_grade, const int execute_grade);
         Form(const Form &CP);
         Form &operator=(const Form &OB);
-        ~Form();
         std::string getName() const;
         bool isSigned() const;
         int getSignGrade() const;
         int getExecuteGrade() const;
-        void beSigned(Bureaucrat &BR);
+        void beSigned(Bureaucrat BR);
+
+        virtual ~Form();
         virtual void execute(Bureaucrat const & executor) = 0;
 
         class GradeTooHighException : public std::exception{

@@ -1,20 +1,22 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 int main ()
-{
+{       
+    Bureaucrat a("mucha", 1);
+    ShrubberyCreationForm d("home");
     try
     { 
-        Bureaucrat a("mucha", 4);
-        // Form d("lucha", 131, 5);
-        // d.beSigned(a);
-        // a.signForm(d);
+        a.signForm(d);
+        d.execute(a);
     }
     catch(std::exception &e)
     {
         std::cerr<< e.what() <<std::endl;
     }
 
-    // std::cout << d << std::endl;
-    // std::cout << a <<std::endl;
+    std::cout << d << std::endl;
+    std::cout << a <<std::endl;
 
 }
