@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:09:44 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/19 16:25:41 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/29 23:07:46 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class Bureaucrat {
         std::string getName() const;
         void incrementGrade(int grade);
         void decrementGrade(int grade);
-        void signForm(Form &form);
+        void signForm(Form &form) const;
+        void executeForm(Form const & form) const;
 
         class GradeTooHighException : public std::exception{
             public:
@@ -44,6 +45,7 @@ class Bureaucrat {
                 const char* what() const throw();
         };
 };
+
 std::ostream& operator<<(std::ostream &OS, const Bureaucrat& OB);
 
 #endif

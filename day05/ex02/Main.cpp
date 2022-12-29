@@ -4,12 +4,15 @@
 
 int main ()
 {       
-    Bureaucrat a("mucha", 1);
-    ShrubberyCreationForm d("home");
+    Bureaucrat a;
+    ShrubberyCreationForm d;
     try
-    { 
+    {
+        Bureaucrat a("mucha", 200);
+        ShrubberyCreationForm d("home");
+        d.beSigned(a);
         a.signForm(d);
-        d.execute(a);
+        a.executeForm(d);
     }
     catch(std::exception &e)
     {

@@ -13,8 +13,8 @@ class ShrubberyCreationForm : public Form {
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &CP);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm &OB);
-		virtual ~ShrubberyCreationForm();
-		virtual void execute(Bureaucrat const & executor);
+		~ShrubberyCreationForm();
+		void execute(Bureaucrat const & executor) const;
 		std::string getTarget() const;
 };
 std::ostream& operator<<(std::ostream &OS, ShrubberyCreationForm &OB);
