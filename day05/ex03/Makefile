@@ -2,7 +2,7 @@ NAME = Bureaucrat
 CC = c++ 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = Main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
-	 PresidentialPardonForm.cpp  
+	 PresidentialPardonForm.cpp Intern.cpp
 
 all : $(NAME)
 $(NAME): $(SRC)
