@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/31 21:25:05 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/12/31 21:25:06 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
@@ -53,6 +65,6 @@ void::RobotomyRequestForm::execute(Bureaucrat const & executor) const
 
 std::ostream &operator<<(std::ostream &OS, RobotomyRequestForm &OB)
 {
-    OS <<"Robotomy sign grade : " << OB.getSignGrade() << "Robotomy execute grade : " << OB.getExecuteGrade() << "Robotomy target" << OB.getTarget();
+    OS <<"Robotomy sign grade : " << OB.getSignGrade() << " Robotomy execute grade : " << OB.getExecuteGrade() << " Robotomy target " << OB.getTarget();
     return OS;
 }

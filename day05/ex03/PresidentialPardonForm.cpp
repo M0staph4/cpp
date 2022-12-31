@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/31 21:25:00 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/12/31 21:25:01 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm()
@@ -48,6 +60,6 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 
 std::ostream &operator<<(std::ostream &OS, PresidentialPardonForm &OB)
 {
-    OS <<"Presidential sign grade : " << OB.getSignGrade() << "Presidential execute grade : " << OB.getExecuteGrade() << "Presidential target" << OB.getTarget();
+    OS <<"Presidential sign grade : " << OB.getSignGrade() << " Presidential execute grade : " << OB.getExecuteGrade() << " Presidential target " << OB.getTarget();
     return OS;
 }

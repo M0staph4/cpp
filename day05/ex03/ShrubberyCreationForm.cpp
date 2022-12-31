@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/31 21:25:10 by mmoutawa          #+#    #+#             */
+/*   Updated: 2022/12/31 21:25:11 by mmoutawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm():
@@ -60,6 +72,6 @@ std::string ShrubberyCreationForm::getTarget() const {return target;}
 
 std::ostream &operator<<(std::ostream &OS, ShrubberyCreationForm &OB)
 {
-    OS <<"Shrubbery sign grade : " << OB.getSignGrade() << "Shrubbery execute grade : " << OB.getExecuteGrade() << "Shrubbery target" << OB.getTarget();
+    OS <<"Shrubbery sign grade : " << OB.getSignGrade() << " Shrubbery execute grade : " << OB.getExecuteGrade() << " Shrubbery target " << OB.getTarget();
     return OS;
 }
