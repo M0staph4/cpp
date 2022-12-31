@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:09:42 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/29 23:14:10 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/12/31 16:28:17 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void Bureaucrat::signForm(Form &form) const
 {
     if(form.isSigned() == true)
         std::cout<< this->getName() << " signed " << form.getName() << std::endl;
-    else if(form.isSigned() == false)
+    else
         std::cout<<this->getName() << " couldn’t sign " << form.getName() << " because the number out of the range" <<std::endl;
 }
 
@@ -92,7 +92,7 @@ void Bureaucrat::executeForm(Form const &form) const
         form.execute(*this);
         std::cout << this->getName() << " executed " << form.getName() << std::endl;
     }
-    else if(form.isSigned() == false)
+    else if(!form.isSigned())
         std::cout<<this->getName() << " couldn’t sign " << form.getName() << " because the number out of the range" <<std::endl;
     else
         std::cout << "the grade is too low" << std::endl;    

@@ -60,6 +60,6 @@ std::string ShrubberyCreationForm::getTarget() const {return target;}
 
 std::ostream &operator<<(std::ostream &OS, ShrubberyCreationForm &OB)
 {
-    OS << OB.getTarget();
+    OS <<"Shrubbery sign grade : " << OB.getSignGrade() << "Shrubbery execute grade : " << OB.getExecuteGrade() << "Shrubbery target" << OB.getTarget();
     return OS;
 }

@@ -13,6 +13,10 @@ class Intern{
         Intern& operator=(const Intern& OB);
         ~Intern();
         Form *makeForm(std::string name, std::string target);
-};
+        class ClassName : public std::exception{
+            public:
+                const char* what() const throw();
+        };
+};  
 
 #endif

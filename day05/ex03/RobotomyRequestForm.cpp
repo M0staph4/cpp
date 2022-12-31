@@ -50,3 +50,9 @@ void::RobotomyRequestForm::execute(Bureaucrat const & executor) const
         GradeTooLowException();
 
 }
+
+std::ostream &operator<<(std::ostream &OS, RobotomyRequestForm &OB)
+{
+    OS <<"Robotomy sign grade : " << OB.getSignGrade() << "Robotomy execute grade : " << OB.getExecuteGrade() << "Robotomy target" << OB.getTarget();
+    return OS;
+}

@@ -32,7 +32,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
     std::cout <<"PresidentialPardonForm destructor called"<<std::endl;
 }
 
-std::string PresidentialPardonForm::getTaget() const
+std::string PresidentialPardonForm::getTarget() const
 {
     return target;
 }
@@ -40,8 +40,14 @@ std::string PresidentialPardonForm::getTaget() const
 void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
     if(this->isSigned() && this->getExecuteGrade() >= executor.getGrade())
-        std::cout<<getTaget()<<" has been pardoned by Zaphod Beeblebrox."<<std::endl;
+        std::cout<<getTarget()<<" has been pardoned by Zaphod Beeblebrox."<<std::endl;
     else
         GradeTooLowException();
 
+}
+
+std::ostream &operator<<(std::ostream &OS, PresidentialPardonForm &OB)
+{
+    OS <<"Presidential sign grade : " << OB.getSignGrade() << "Presidential execute grade : " << OB.getExecuteGrade() << "Presidential target" << OB.getTarget();
+    return OS;
 }

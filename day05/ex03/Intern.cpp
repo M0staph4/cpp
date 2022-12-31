@@ -23,28 +23,34 @@ Intern::~Intern()
     std::cout <<"Intern destructor called" << std::endl;
 }
 
+const char *Intern::ClassName::what() const throw()
+{
+    return "class name dosen't exist";
+}
+
 Form *Intern::makeForm(std::string name ,std::string target)
 {
-    PresidentialPardonForm *P;
-    RobotomyRequestForm *R;
-    ShrubberyCreationForm *S;
+    Form *form;
 
     std::string names[3]; 
     names[0] = "presidential pardon";
     names[1] = "robotomy request";
     names[2] = "shrubbery creation";
-
-    
-    switch(name)
+    int i = 0;
+    while(names[i] != name && i < 3)
+        i++;
+    switch(i)
     {
-        case names[0]:
-            return P;
-        case names[1]:
-            return R;
-        case names[2]:
-            return S;
-        default:
-            break;
+        case 0:
+            form = new PresidentialPardonForm(target);
+            return form;
+        case 1:
+            form = new RobotomyRequestForm(target);
+            return form;
+        case 2:
+            form = new ShrubberyCreationForm(target);
+            return form;
     }
-    return NULL;
+    throw 
+        ClassName();
 }

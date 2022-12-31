@@ -13,7 +13,7 @@ class PresidentialPardonForm : public Form{
         PresidentialPardonForm &operator=(const PresidentialPardonForm &OB);
         ~PresidentialPardonForm();
         void execute(Bureaucrat const & executor) const;
-        std::string getTaget() const;
+        std::string getTarget() const;
 };
 
 #endif

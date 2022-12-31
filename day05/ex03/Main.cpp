@@ -3,15 +3,20 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main ()
 {
     try
     {
-        Bureaucrat a("mucha", 5);
-        PresidentialPardonForm d("home");
-        a.signForm(d);
-        a.executeForm(d);
+        Intern someRandomIntern;
+        Form* rrf;
+        rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+        Bureaucrat a("mucha", 137);
+        rrf->beSigned(a);
+        a.signForm(*rrf);
+        a.executeForm(*rrf);
+        delete rrf;
     }
     catch(std::exception &e)
     {
