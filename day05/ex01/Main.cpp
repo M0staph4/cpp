@@ -2,10 +2,11 @@
 #include "Form.hpp"
 int main ()
 {
+    Form r;
     try
     { 
         Bureaucrat a("mucha", 4);
-        Form d("lucha", 131, 5);
+        Form d("lucha", 3, 30);
         d.beSigned(a);
         a.signForm(d);
     }
@@ -14,7 +15,7 @@ int main ()
         std::cerr<< e.what() <<std::endl;
     }
 
-    // std::cout << d << std::endl;
+    std::cout << r << std::endl;
     // std::cout << a <<std::endl;
 
 }

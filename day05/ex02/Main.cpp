@@ -8,8 +8,8 @@ int main ()
 {
     try
     {
-        Bureaucrat a("mucha", 5);
-        PresidentialPardonForm d("home");
+        Bureaucrat a("mucha", 1);
+        ShrubberyCreationForm d("home");
         a.signForm(d);
         a.executeForm(d);
     }

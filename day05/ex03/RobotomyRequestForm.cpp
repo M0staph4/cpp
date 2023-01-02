@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 21:25:05 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/31 21:25:06 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:58:17 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void::RobotomyRequestForm::execute(Bureaucrat const & executor) const
             std::cout<<"the robotomy failed"<<std::endl;
     }
     else
-        GradeTooLowException();
+        throw GradeTooLowException();
 
 }
 

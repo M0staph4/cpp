@@ -12,7 +12,6 @@ int main ()
     {
         std::cerr<< e.what() <<std::endl;
     }
-
     std::cout << a <<std::endl;
 
 }

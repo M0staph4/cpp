@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:09:42 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/19 16:36:50 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/02 12:05:47 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,16 @@ std::string Bureaucrat::getName() const {return this->name;}
 
 void Bureaucrat::incrementGrade(int grade)
 {
-    this->grade = grade--;
-    if(this->grade > 150)
-        throw GradeTooLowException();
-    else if (this->grade < 1)
+    if (this->grade <= 1)
         throw GradeTooHighException();
+    this->grade = grade--;
 }
 
 void Bureaucrat::decrementGrade(int grade)
 {
-    this->grade = grade++;
-    if(this->grade > 150)
+    if(this->grade >= 150)
         throw GradeTooLowException();
-    else if (this->grade < 1)
-        throw GradeTooHighException();
+    this->grade = grade++;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -81,8 +77,8 @@ void Bureaucrat::signForm(Form &form)
 {
     if(form.isSigned() == true)
         std::cout<< this->getName() << " signed " << form.getName() << std::endl;
-    else if(form.isSigned() == false)
-        std::cout<<this->getName() << " couldn’t sign " << form.getName() << " because the number out of the range" <<std::endl;
+    else
+        std::cout<<this->getName() << " couldn’t sign " << form.getName() << " because the grade out of the range" <<std::endl;
 }
 
 std::ostream& operator<<(std::ostream &OS, const Bureaucrat &OB)

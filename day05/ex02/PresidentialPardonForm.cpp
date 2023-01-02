@@ -37,11 +37,11 @@ std::string PresidentialPardonForm::getTaget() const
     return target;
 }
 
-void PresidentialPardonForm::execute(const Bureaucrat &executor) const
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     if(this->isSigned() && this->getExecuteGrade() >= executor.getGrade())
         std::cout<<getTaget()<<" has been pardoned by Zaphod Beeblebrox."<<std::endl;
     else
-        GradeTooLowException();
+       throw GradeTooLowException();
 
 }

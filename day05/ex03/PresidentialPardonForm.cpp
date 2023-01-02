@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 21:25:00 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/31 21:25:01 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:58:11 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const
     if(this->isSigned() && this->getExecuteGrade() >= executor.getGrade())
         std::cout<<getTarget()<<" has been pardoned by Zaphod Beeblebrox."<<std::endl;
     else
-        GradeTooLowException();
+        throw GradeTooLowException();
 
 }
 

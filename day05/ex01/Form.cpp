@@ -51,15 +51,15 @@ Form::~Form()
 
 void Form::beSigned(Bureaucrat &BR)
 {
-    if(BR.getGrade() > 150)
+    if(BR.getGrade() < this->getSignGrade())
         throw GradeTooLowException();
-    else if(BR.getGrade() >= 1 && BR.getGrade() <= 150)
+    else
         _signed = true;
 }
 
 
 std::ostream& operator<<(std::ostream &OS, const Form& OB)
 {
-    OS << OB.getName() << " Form sign grade : " << OB.getSignGrade() << " Form execute grade : " << OB.getExecuteGrade();
+    OS << OB.getName() << " Form sign grade : " << OB.getSignGrade() << " Form execute grade : " << OB.getExecuteGrade() << "Form sign : " << OB.isSigned();
     return OS;
 }

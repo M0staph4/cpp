@@ -53,7 +53,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         file.close();
     }
     else
-        GradeTooLowException();
+       throw GradeTooLowException();
 }
 
 std::string ShrubberyCreationForm::getTarget() const {return target;}

@@ -47,6 +47,6 @@ void::RobotomyRequestForm::execute(Bureaucrat const & executor) const
             std::cout<<"the robotomy failed"<<std::endl;
     }
     else
-        GradeTooLowException();
+        throw GradeTooLowException();
 
 }

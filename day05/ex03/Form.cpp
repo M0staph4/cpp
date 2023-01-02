@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 21:24:23 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/31 21:24:24 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:53:51 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ void Form::beSigned(Bureaucrat &BR)
 
 std::ostream& operator<<(std::ostream &OS, const Form& OB)
 {
-    OS << OB.getName() << " Form sign grade : " << OB.getSignGrade() << " Form execute grade : " << OB.getExecuteGrade();
+    OS << OB.getName() << " Form sign grade : " << OB.getSignGrade() << " Form execute grade : " << OB.getExecuteGrade() << "Form sign : " << OB.isSigned();
     return OS;
 }

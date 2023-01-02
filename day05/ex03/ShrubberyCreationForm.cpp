@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 21:25:10 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/31 21:25:11 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:58:23 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         file.close();
     }
     else
-        GradeTooLowException();
+        throw GradeTooLowException();
 }
 
 std::string ShrubberyCreationForm::getTarget() const {return target;}

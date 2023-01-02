@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 21:24:49 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/31 21:24:50 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/02 12:37:54 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,8 @@ Form *Intern::makeForm(std::string name ,std::string target)
     names[0] = "presidential pardon";
     names[1] = "robotomy request";
     names[2] = "shrubbery creation";
-    int i = 0;
-    while(names[i] != name && i < 3)
-        i++;
+    int i = -1;
+    while(names[++i] != name && i < 3);
     switch(i)
     {
         case 0:
@@ -62,7 +61,7 @@ Form *Intern::makeForm(std::string name ,std::string target)
         case 2:
             form = new ShrubberyCreationForm(target);
             return form;
+        default :
+            throw ClassName();
     }
-    throw 
-        ClassName();
 }
