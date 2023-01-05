@@ -6,7 +6,7 @@ int main ()
 
     try
     {
-        Bureaucrat bureaucrat("lol", 0);
+        Bureaucrat bureaucrat("name", 0);
     }
     catch(std::exception &e)
     {

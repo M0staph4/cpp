@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:09:44 by mmoutawa          #+#    #+#             */
-/*   Updated: 2023/01/02 12:22:14 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/03 16:31:39 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class Bureaucrat {
         ~Bureaucrat();
         int getGrade() const;
         std::string getName() const;
-        void incrementGrade(int grade);
-        void decrementGrade(int grade);
+        void incrementGrade();
+        void decrementGrade();
         void signForm(Form &form);
         void executeForm(Form const & form) const;
 

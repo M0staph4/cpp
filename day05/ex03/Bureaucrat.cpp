@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:09:42 by mmoutawa          #+#    #+#             */
-/*   Updated: 2023/01/02 11:54:13 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/03 16:31:33 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,18 @@ int Bureaucrat::getGrade() const {return this->grade;}
 
 std::string Bureaucrat::getName() const {return this->name;}
 
-void Bureaucrat::incrementGrade(int grade)
+void Bureaucrat::incrementGrade()
 {
     if (this->grade <= 1)
         throw GradeTooHighException();
-    this->grade = grade--;
+    this->grade--;
 }
 
-void Bureaucrat::decrementGrade(int grade)
+void Bureaucrat::decrementGrade()
 {
     if(this->grade >= 150)
         throw GradeTooLowException();
-    this->grade = grade++;
+    this->grade++;
 }
 
 Bureaucrat::~Bureaucrat()

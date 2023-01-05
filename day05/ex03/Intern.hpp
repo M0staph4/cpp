@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 21:24:52 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/12/31 21:24:53 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2023/01/03 16:50:15 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Intern{
         Intern& operator=(const Intern& OB);
         ~Intern();
         Form *makeForm(std::string name, std::string target);
+
         class ClassName : public std::exception{
             public:
                 const char* what() const throw();
